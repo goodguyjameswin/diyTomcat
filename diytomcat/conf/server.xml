@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Server> <!--表示服务器本身-->
+    <Service name="Catalina"> <!--代表tomcat提供的服务-->
+        <Connector port="18080"
+                   compression="on"
+                   compressionMinSize="20"
+                   noCompressionUserAgents="gozilla, traviata"
+                   compressableMimeType="text/html,text/xml,text/javascript,application/javascript,text/css,text/plain,text/json"
+        /> <!--是否启动gzip压缩；最小进行压缩的字节数；不进行压缩的浏览器；需要进行压缩的mimeType-->
+        <Connector port="18081"/>
+        <Connector port="18082"/>
+        <!--表示servlet引擎，用来处理servlet的请求-->
+        <Engine defaultHost="localhost"> <!--默认的 Host 是名称是 "localhost" 的 Host-->
+            <!--Host表示虚拟主机-->
+            <Host name="localhost">
+                <Context path="/b" docBase="d:/java_proj/diytomcat/b" />
+                <Context path="/javaweb" docBase="d:/java_proj/javaweb/web" reloadable="true"/> <!--表示支持热加载-->
+            </Host>
+        </Engine>
+    </Service>
+</Server>

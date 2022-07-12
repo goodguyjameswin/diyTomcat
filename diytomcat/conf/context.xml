@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context> <!--web应用默认配置信息的存放路径-->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+</Context>
